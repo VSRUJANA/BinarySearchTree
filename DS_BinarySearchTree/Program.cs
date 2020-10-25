@@ -23,8 +23,8 @@ namespace DS_BinarySearchTree
             bst.Insert(67);
             Console.WriteLine("Binary Search Tree (Inorder Traversal) : ");
             bst.Display(bst.root);
-            Console.WriteLine("Size of Tree: " + bst.Size(bst.root));
-
+            Console.WriteLine("\nSize of Tree: " + bst.Size(bst.root));
+            bst.BinarySearch(63);
         }
     }
 }

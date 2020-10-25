@@ -56,12 +56,13 @@ namespace DS_BinarySearchTree
             if (node != null)
             {
                 Display(node.Left);
-                Console.WriteLine(node.data);
+                Console.Write(node.data+"\t");
                 Display(node.Right);
             }
         }
 
 
+        //Size of Binary Search Tree
         public int Size(Node<T> node)
         {
             if (node == null) return (0);
@@ -69,6 +70,36 @@ namespace DS_BinarySearchTree
             {
                 return (Size(node.Left) + 1 + Size(node.Right));
             }
+        }
+
+        //Search given node in Binary search tree
+        public void BinarySearch(T element)
+        {
+            Node<T> current = root;
+            bool elementFound = false;
+            while (current != null)
+            {
+                if (current.data.Equals(element))
+                {
+                    elementFound = true;
+                    break;
+                }
+                else
+                {
+                    if (element.CompareTo(current.data) < 0)
+                    {
+                        current = current.Left;
+                    }
+                    else
+                    {
+                        current = current.Right;
+                    }
+                }
+            }
+            if (elementFound)
+                Console.WriteLine("Element {0} found",element);
+            else
+                Console.WriteLine("Element doesn't exist in the tree");
         }
     }
 }
